@@ -228,7 +228,7 @@ public class MaBibliothequeTraitementImageEtendue {
 
 		// Conversion du signe de reference en niveaux de gris et normalisation
 		Mat panneauref = Highgui.imread(signfile);	float somme=0;
-		int n=200;
+		int n=229;
 		
 		float moyenne=0;;
 		Mat graySign = new Mat(panneauref.rows(), panneauref.cols(), panneauref.type());

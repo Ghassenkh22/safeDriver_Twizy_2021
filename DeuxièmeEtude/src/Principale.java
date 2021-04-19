@@ -11,7 +11,7 @@ public class Principale {
 	{
 		//Ouverture le l'image et saturation des rouges
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-		Mat m=Highgui.imread("p10.jpg",Highgui.CV_LOAD_IMAGE_COLOR);
+		Mat m=Highgui.imread("frame.jpg",Highgui.CV_LOAD_IMAGE_COLOR);
 		MaBibliothequeTraitementImageEtendue.afficheImage("Image testée", m);
 		Mat transformee=MaBibliothequeTraitementImageEtendue.transformeBGRversHSV(m);
 		//la methode seuillage est ici extraite de l'archivage jar du meme nom 
@@ -20,6 +20,7 @@ public class Principale {
 
 		//Création d'une liste des contours à partir de l'image saturée
 		List<MatOfPoint> ListeContours= MaBibliothequeTraitementImageEtendue .ExtractContours(saturee);
+		System.out.println("nbr contour"+ListeContours.size()+"\n");
 		int i=0;
 		int k=0;
 		double [] scores=new double [6];
@@ -30,7 +31,6 @@ public class Principale {
 
 			if (objetrond!=null){
 				k++;
-				if (k==2)
 				MaBibliothequeTraitementImageEtendue.afficheImage("Objet rond detécté", objetrond);
 				scores[0]=MaBibliothequeTraitementImageEtendue.Similitude(objetrond,"ref30.jpg");
 				scores[1]=MaBibliothequeTraitementImageEtendue.Similitude(objetrond,"ref50.jpg");
