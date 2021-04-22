@@ -60,6 +60,6 @@ public class Principale {
 			}
 		}	
 
-
+		MaBibliothequeTraitementImageEtendue.afficheImage("image finale", m);
 	}
 }

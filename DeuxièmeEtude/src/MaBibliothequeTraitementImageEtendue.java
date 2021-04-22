@@ -228,7 +228,7 @@ public class MaBibliothequeTraitementImageEtendue {
 
 		// Conversion du signe de reference en niveaux de gris et normalisation
 		Mat panneauref = Highgui.imread(signfile);	float somme=0;
-		int n=229;
+		int n=336;
 		
 		float moyenne=0;;
 		Mat graySign = new Mat(panneauref.rows(), panneauref.cols(), panneauref.type());
@@ -272,11 +272,11 @@ public class MaBibliothequeTraitementImageEtendue {
 		//System.out.println(matchs.dump());
 		Mat matchedImage =new Mat(panneauref.rows(),panneauref.cols()*2,panneauref.type());
 		Features2d.drawMatches(sObject, objectKeypoints,panneauref,signKeypoints,matchs,matchedImage); 
-		afficheImage("matched",matchedImage );
+		//afficheImage("matched",matchedImage );
 		List<DMatch> l =matchs.toList();
 		
 		
-		for(int i=0;i<n;i++)
+		for(int i=0;i<l.size();i++)
 		{  DMatch dmatch=l.get(i);
 		   somme=somme+dmatch.distance;
 		
