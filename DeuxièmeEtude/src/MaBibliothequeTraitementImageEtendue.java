@@ -251,8 +251,8 @@ public class MaBibliothequeTraitementImageEtendue {
 		
 		
 		//à compléter...
-		FeatureDetector orbDetector =FeatureDetector.create(FeatureDetector.ORB);
-		DescriptorExtractor orbExtractor =DescriptorExtractor.create(DescriptorExtractor.ORB);
+		FeatureDetector orbDetector =FeatureDetector.create(FeatureDetector.SURF);
+		DescriptorExtractor orbExtractor =DescriptorExtractor.create(DescriptorExtractor.SURF);
 		MatOfKeyPoint objectKeypoints =new MatOfKeyPoint();
 		orbDetector.detect(grayObject , objectKeypoints);
 		
