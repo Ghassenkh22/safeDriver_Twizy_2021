@@ -1,3 +1,4 @@
+package classes;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -251,8 +252,8 @@ public class MaBibliothequeTraitementImageEtendue {
 		
 		
 		//à compléter...
-		FeatureDetector orbDetector =FeatureDetector.create(FeatureDetector.SURF);
-		DescriptorExtractor orbExtractor =DescriptorExtractor.create(DescriptorExtractor.SURF);
+		FeatureDetector orbDetector =FeatureDetector.create(FeatureDetector.ORB);
+		DescriptorExtractor orbExtractor =DescriptorExtractor.create(DescriptorExtractor.ORB);
 		MatOfKeyPoint objectKeypoints =new MatOfKeyPoint();
 		orbDetector.detect(grayObject , objectKeypoints);
 		
@@ -282,7 +283,7 @@ public class MaBibliothequeTraitementImageEtendue {
 		
 		
 		}
-		moyenne=somme/n;
+		moyenne=somme/l.size();
 		System.out.println(moyenne);
 		//System.out.println(contours.size());
 		return moyenne;}}
